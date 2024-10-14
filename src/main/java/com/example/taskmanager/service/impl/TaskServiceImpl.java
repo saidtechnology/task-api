@@ -29,7 +29,7 @@ public class TaskServiceImpl implements TaskService {
     @Override
     public Task createTask(Task task) {
         // TODO: Implement creating a new task
-        return null;
+        return taskRepository.save(task);
     }
 
     @Override
