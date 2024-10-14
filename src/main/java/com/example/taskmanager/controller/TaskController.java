@@ -43,6 +43,7 @@ public class TaskController {
     @DeleteMapping("/{id}")
     public ResponseEntity<HttpStatus> deleteTask(@PathVariable Long id) {
         // TODO: Implement deleting a task endpoint
-        return null;
+        taskService.deleteTask(id);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 }
