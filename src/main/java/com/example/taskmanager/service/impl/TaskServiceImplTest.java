@@ -46,7 +46,7 @@ public class TaskServiceImplTest {
         // Then
         assertEquals("Updated Task", result.getTitle());
         assertEquals("Updated Description", result.getDescription());
-        assertEquals(true, result.isCompleted());
+        assertTrue(result.isCompleted());
 
         verify(taskRepository, times(1)).findById(taskId);
         verify(taskRepository, times(1)).save(existingTask);
