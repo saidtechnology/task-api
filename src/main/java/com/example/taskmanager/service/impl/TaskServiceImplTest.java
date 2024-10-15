@@ -7,7 +7,6 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -46,7 +45,7 @@ public class TaskServiceImplTest {
         // Then
         assertEquals("Updated Task", result.getTitle());
         assertEquals("Updated Description", result.getDescription());
-        assertTrue(result.isCompleted());
+        assertEquals(true, result.isCompleted());
 
         verify(taskRepository, times(1)).findById(taskId);
         verify(taskRepository, times(1)).save(existingTask);
